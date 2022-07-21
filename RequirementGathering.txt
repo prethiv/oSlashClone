@@ -1,0 +1,32 @@
+1.Create a shortcut
+
+o/nithish www.nithish.com simple1,justformyref
+
+nithish nithish www.nithish.com
+
+o/nithish www.prethiv.com
+o/wwe wwwe.com
+
+it should throw an error saying that shortcut already exists.
+
+2.List all the shortcut for a particular user
+
+/list nithish => nithish,wwe
+
+/login | username & password => fetch password from db based on username from request and compare it with the password from request if matches return a jwt else password mismatch 
+Create a shortcut – includes the fields shortlink (string), description (string), the full url (string) and tags (multiple strings).
+user
+
+username | password
+nithish  | nithish123
+
+username | shortlink | description | full url 	 		| tagid						tagid| tags
+nithish  | wwe       | wwe website | www.wwe.com 		| tagid=hash(username+shortlink)       	hash | wrestling
+																	hash | wwe
+readFileSync
+require
+
+it caches the value so that every update done by requests will be in memory and also if you console log it
+out it will be in a updated state
+
+but readfilesync reads freshly everytime the call comes in

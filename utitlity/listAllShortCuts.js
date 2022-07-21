@@ -1,5 +1,5 @@
 const executeQuery = require('./executeQuery');
-
+const CONSTANTS = require('./constants/constants');
 String.prototype.hashCode = function() {
     var hash = 0, i, chr;
     if (this.length === 0) return hash;
@@ -10,6 +10,46 @@ String.prototype.hashCode = function() {
     }
     return hash;
   };
+
+  function compareShortLink( a, b ) {
+    if ( a.shortlink < b.shortlink ){
+      return -1;
+    }
+    if ( a.shortlink > b.shortlink ){
+      return 1;
+    }
+    return 0;
+  }
+
+  function compareDescription( a, b ) {
+    if ( a.description_shortlink < b.description_shortlink ){
+      return -1;
+    }
+    if ( a.description_shortlink > b.description_shortlink ){
+      return 1;
+    }
+    return 0;
+  }
+
+  function compareFullUrl( a, b ) {
+    if ( a.full_url < b.full_url ){
+      return -1;
+    }
+    if ( a.full_url > b.full_url ){
+      return 1;
+    }
+    return 0;
+  }
+
+  function compareTag( a, b ) {
+    if ( a.tagid < b.tagid ){
+      return -1;
+    }
+    if ( a.tagid > b.tagid ){
+      return 1;
+    }
+    return 0;
+  }
 
 module.exports ={
     listAllShortcuts:async (req,res)=>{
@@ -37,6 +77,29 @@ module.exports ={
                 }
             }
         }
-        res.json(shortcuts);
+
+
+        let sort = req.body.sort;
+
+        if(sort==='true'){
+            let criteria = req.body.sortCriteria;
+            switch(criteria){
+                case CONSTANTS.SHORT_LINK:
+                    res.json(shortcuts.sort(compareShortLink));
+                    break;
+                case CONSTANTS.DESC:
+                    res.json(shortcuts.sort(compareDescription));
+                    break;
+                case CONSTANTS.FULL_URL:
+                    res.json(shortcuts.sort(compareFullUrl));
+                    break;
+                case CONSTANTS.TAG:
+                    res.json(shortcuts.sort(compareTag));
+                    break;
+            }
+        }
+        else{
+            res.json(shortcuts);
+        }
     }
 }

@@ -46,6 +46,6 @@ module.exports={
                 res.json({
                     msg:"Shortcut created successfully"
                 });
-            }
+            } 
     }
 };
