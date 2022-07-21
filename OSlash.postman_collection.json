@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "ef9dd558-6fc7-4248-af0c-f2e32e30a653",
+		"name": "OSlash",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22216224"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Nithish\",\r\n    \"password\":\"nithish123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createShortcut",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"shortlink\":\"abc3\",\r\n    \"description_shortlink\":\"Arabic website\",\r\n    \"full_url\":\"abc.wwe.com\",\r\n    \"tags\":[\r\n        \"Wrestling\",\r\n        \"Undertaker\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/createShortcut",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"createShortcut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllShortcuts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"sort\":\"false\",\r\n    \"sortCriteria\":\"TAG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/listAllShortcuts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"listAllShortcuts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllShortcuts Optional Sort SHORT_LINK",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"sort\":\"true\",\r\n    \"sortCriteria\":\"SHORT_LINK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/listAllShortcuts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"listAllShortcuts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllShortcuts Optional Sort DESC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"sort\":\"true\",\r\n    \"sortCriteria\":\"DESCRIPTION\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/listAllShortcuts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"listAllShortcuts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllShortcuts Optional Sort FULL_URL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"sort\":\"true\",\r\n    \"sortCriteria\":\"FULL_URL\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/listAllShortcuts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"listAllShortcuts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllShortcuts Optional Sort TAG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"sort\":\"true\",\r\n    \"sortCriteria\":\"TAG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/listAllShortcuts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"listAllShortcuts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteShortcut",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"shortlink\":\"wwe2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/deleteShortcuts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"deleteShortcuts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchShortcut using shortlink",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"searchText\":\"abc2\",\r\n    \"searchWith\":\"SHORT_LINK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/searchShortcut",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"searchShortcut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchShortcut using description",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"searchText\":\"Wrestling\",\r\n    \"searchWith\":\"DESCRIPTION\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/searchShortcut",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"searchShortcut"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchShortcut using tags",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\":\"{{json_web_token}}\",\r\n    \"username\":\"Nithish\",\r\n    \"searchText\":\"Undertaker\",\r\n    \"searchWith\":\"TAG\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/searchShortcut",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"searchShortcut"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
