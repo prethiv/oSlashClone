@@ -65,9 +65,7 @@ module.exports ={
             tagids.push(result[i].tagid);
         }
         console.log(tagids);
-        // for(let i=0;i<shortcuts.length;i++){
-        //     shortcuts[i].tags=[]
-        // }
+    
         for(let i=0;i<tagids.length;i++){
             result = await executeQuery.executeQuery(`select * from tag where tagid='${tagids[i]}'`)
             
